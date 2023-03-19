@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--外部Bean 1、两个类对象的创建
+            2、在emp bean标签 使用property
+            -->
+    <bean id="department" class="com.atguigu.ditest.Department">
+        <property name="dName" value="ok部"></property>
+    </bean>
+    <bean id="employee" class="com.atguigu.ditest.Employee">
+        <property name="name" value="lucy"></property>
+        <property name="age" value="18"></property>
+        <!--对象类型-->
+        <property name="department" ref="department"></property>
+    </bean>
+    <bean id="employee2" class="com.atguigu.ditest.Employee">
+        <property name="name" value="jerry"></property>
+        <property name="age" value="20"></property>
+        <!--对象类型-->
+        <!--内部Bean-->
+        <property name="department">
+            <bean id="department3" class="com.atguigu.ditest.Department">
+                <property name="dName" value="财务部"></property>
+            </bean>
+        </property>
+
+    </bean>
+
+    <!--级联创建-->
+    <bean id="department4" class="com.atguigu.ditest.Department">
+        <property name="dName" value="财务部"></property>
+    </bean>
+
+
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--set方法-->
+    <bean id="book" class="com.atguigu.di.Book">
+        <property name="bName" value="前段开发"></property>
+        <property name="author" value="尚硅谷"></property>
+        <property name="others">
+            <!--null标签-->
+            <null/>
+        </property>
+        <!--转义 $lt;$gt; xml实体 转义-->
+        <!--<![CDATA[a<b]]   CDATA <![CDATA[纯文本]]-->
+    </bean>
+
+    <!--构造器注入--><!--索引 0 第一个-->
+    <bean id="bookCon" class="com.atguigu.di.Book">
+        <constructor-arg name="bName" value="Java开发"></constructor-arg>
+        <constructor-arg index="1" value="ok"></constructor-arg>
+    </bean>
+</beans>

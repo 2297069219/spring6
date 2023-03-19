@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="teacher" class="com.atguigu.dmap.Teacher">
+
+    </bean>
+    <bean id="student" class="com.atguigu.dmap.Student">
+        <property name="sid" value="zhang"></property>
+        <property name="sname" value="222"></property>
+        <property name="map">
+            <map>
+                <entry>
+                    <key>
+                        <value>10010</value>
+                    </key>
+                    <ref bean="teacher"></ref>
+                </entry>
+                <entry>
+                    <key>
+                        <value>10002</value>
+                    </key>
+                    <ref bean="teacher"></ref>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

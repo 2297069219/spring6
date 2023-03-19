@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emp" class="com.atguigu.ditest.Employee">
+        <property name="name" value="ok"></property>
+        <property name="age" value="18">
+        </property>
+    </bean>
+    <bean id="emp2" class="com.atguigu.ditest.Employee">
+        <property name="name" value="ok2"></property>
+        <property name="age" value="18">
+        </property>
+    </bean>
+
+    <bean id="dept" class="com.atguigu.ditest.Department">
+        <property name="dName" value="ok"></property>
+        <property name="list">
+            <list>
+                <!--<value-->
+                <ref bean="emp"></ref>
+                <ref bean="emp2"></ref>
+            </list>
+        </property>
+    </bean>
+</beans>
